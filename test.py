@@ -32,6 +32,18 @@ if a!=number:
         print("WRONG! You have " + str(chances) + " chances left")
         chances = chances -1
         a = input("From 1 to 100, what is the number?: ")
+        if a < 1:
+            while True:
+                print("YOU CANT GUESS BELOW 1!!!!")
+                a = input("From 1 to 100, what is the number?: ")
+                if a > 0:
+                    break
+        if a > 100:
+            while True:
+                print("YOU CANT GUESS ABOVE 100!!!")
+                a = input("From 1 to 100, what is the number?: ")
+                if a < 101:
+                    break
         if a == number:
             print("CORRECT. You win!")
             break
